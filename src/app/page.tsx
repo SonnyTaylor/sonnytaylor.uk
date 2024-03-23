@@ -1,9 +1,8 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SparklesCore } from "../ui/sparkles";
 import Link from "next/link";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
-import { useEffect, useState } from "react";
 
 function Navbar() {
   const [fadeIn, setFadeIn] = useState(false);
@@ -15,7 +14,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`text-white pt-5 z-20 ${
+      className={`dark:text-white pt-5 z-20 ${
         fadeIn ? "opacity-100 transition-opacity duration-1000" : "opacity-0"
       }`}
       style={{ transitionDelay: `${fadeIn ? "0.2s" : "0s"}` }}
@@ -36,8 +35,20 @@ function Navbar() {
 }
 
 export default function Home() {
+  const [particleColor, setParticleColor] = useState("#FFFFFF");
+
+  useEffect(() => {
+    // Check if the user's system is in light mode
+    const isLightMode = window.matchMedia(
+      "(prefers-color-scheme: light)"
+    ).matches;
+
+    // Set particle color based on system mode
+    setParticleColor(isLightMode ? "#000000" : "#FFFFFF");
+  }, []);
+
   return (
-    <div className="h-[40rem] relative w-full bg-black flex flex-col items-center justify-center overflow-hidden min-h-screen">
+    <div className="h-[40rem] relative w-full dark:bg-black flex flex-col items-center justify-center overflow-hidden min-h-screen">
       <div className="w-full absolute inset-0 h-screen">
         <SparklesCore
           id="tsparticlesfullpage"
@@ -46,7 +57,7 @@ export default function Home() {
           maxSize={1.4}
           particleDensity={100}
           className="w-full h-full"
-          particleColor="#FFFFFF"
+          particleColor={particleColor}
         />
       </div>
 
