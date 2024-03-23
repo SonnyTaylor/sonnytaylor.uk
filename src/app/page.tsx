@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { SparklesCore } from "../ui/sparkles";
+import { SparklesCore } from "../components/ui/sparkles";
 import Link from "next/link";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
+import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 
 function Navbar() {
   const [fadeIn, setFadeIn] = useState(false);
