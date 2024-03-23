@@ -49,7 +49,7 @@ export default function Home() {
 
   return (
     <div className="h-[40rem] relative w-full dark:bg-black flex flex-col items-center justify-center overflow-hidden min-h-screen">
-      <div className="w-full absolute inset-0 h-screen">
+      <div className="absolute inset-0 w-full h-screen">
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
@@ -63,7 +63,7 @@ export default function Home() {
 
       <TextGenerateEffect
         words="Sonny Taylor"
-        className="md:text-7xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20"
+        className="relative z-20 text-3xl font-bold text-center text-white md:text-7xl lg:text-6xl"
       />
       <Navbar />
     </div>
