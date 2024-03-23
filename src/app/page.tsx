@@ -20,13 +20,13 @@ function Navbar() {
       style={{ transitionDelay: `${fadeIn ? "0.2s" : "0s"}` }}
     >
       <ul className="flex justify-center">
-        <li className="mr-4">
+        <li className="mr-4 hover:text-gray-400">
           <Link href="/about">About</Link>
         </li>
-        <li className="mr-4">
+        <li className="mr-4 hover:text-gray-400">
           <Link href="/projects">Projects</Link>
         </li>
-        <li className="mr-4">
+        <li className="mr-4 hover:text-gray-400">
           <Link href="/blog">Blog</Link>
         </li>
       </ul>
