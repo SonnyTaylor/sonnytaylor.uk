@@ -13,24 +13,26 @@ function Navbar() {
   }, []);
 
   return (
-    <nav
-      className={`dark:text-white pt-5 z-20 ${
-        fadeIn ? "opacity-100 transition-opacity duration-1000" : "opacity-0"
-      }`}
-      style={{ transitionDelay: `${fadeIn ? "0.2s" : "0s"}` }}
-    >
-      <ul className="flex justify-center">
-        <li className="mr-4 hover:text-gray-400">
-          <Link href="/about">About</Link>
-        </li>
-        <li className="mr-4 hover:text-gray-400">
-          <Link href="/projects">Projects</Link>
-        </li>
-        <li className="mr-4 hover:text-gray-400">
-          <Link href="/blog">Blog</Link>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav
+        className={`dark:text-white pt-5 z-20 ${
+          fadeIn ? "opacity-100 transition-opacity duration-1000" : "opacity-0"
+        }`}
+        style={{ transitionDelay: `${fadeIn ? "0.2s" : "0s"}` }}
+      >
+        <ul className="flex justify-center">
+          <li className="mr-4 hover:text-gray-400">
+            <Link href="/about">About</Link>
+          </li>
+          <li className="mr-4 hover:text-gray-400">
+            <Link href="/projects">Projects</Link>
+          </li>
+          <li className="mr-4 hover:text-gray-400">
+            <Link href="/blog">Blog</Link>
+          </li>
+        </ul>
+      </nav>
+    </>
   );
 }
 
