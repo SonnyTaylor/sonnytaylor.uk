@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { SparklesCore } from "../components/ui/sparkles";
 import Link from "next/link";
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
@@ -21,9 +21,6 @@ function Navbar() {
         style={{ transitionDelay: `${fadeIn ? "0.2s" : "0s"}` }}
       >
         <ul className="flex justify-center">
-          <li className="mr-4 hover:text-gray-400">
-            <Link href="/projects">Projects</Link>
-          </li>
           <li className="mr-4 hover:text-gray-400">
             <Link href="/blog">Blog</Link>
           </li>
@@ -68,6 +65,27 @@ export default function Home() {
         className="relative z-20 text-3xl font-bold text-center text-white md:text-7xl lg:text-6xl"
       />
       <Navbar />
+
+      <footer className="dark:text-white absolute bottom-0 w-full text-center p-4 text-xs">
+        <p>
+          Made with{" "}
+          <a
+            href="https://ui.aceternity.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Acternity
+          </a>{" "}
+          &{" "}
+          <a
+            href="https://ui.shadcn.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            shadcn/ui
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }

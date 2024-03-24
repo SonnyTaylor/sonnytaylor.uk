@@ -20,7 +20,7 @@ export function HoverCardGithub() {
         <div className="flex justify-between space-x-4">
           <Avatar>
             <AvatarImage src="https://avatars.githubusercontent.com/u/135790742?v=4" />
-            <AvatarFallback>VC</AvatarFallback>
+            <AvatarFallback>ST</AvatarFallback>
           </Avatar>
           <div className="space-y-1">
             <h4 className="text-sm font-semibold">@SonnyTaylor</h4>
