@@ -1,8 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
-import { SparklesCore } from "../components/ui/sparkles";
+import {useEffect, useState} from "react";
+import {SparklesCore} from "@/components/ui/sparkles";
 import Link from "next/link";
-import { TextGenerateEffect } from "../components/ui/text-generate-effect";
+import {TextGenerateEffect} from "@/components/ui/text-generate-effect";
 
 function Navbar() {
   const [fadeIn, setFadeIn] = useState(false);
@@ -33,6 +33,29 @@ function Navbar() {
   );
 }
 
+function Footer() {
+    return <footer className="dark:text-white absolute bottom-0 w-full text-center p-4 text-xs">
+        <p>
+            Made with{" "}
+            <a
+                href="https://ui.aceternity.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Acternity
+            </a>{" "}
+            &{" "}
+            <a
+                href="https://ui.shadcn.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                shadcn
+            </a>/ui
+        </p>
+    </footer>;
+}
+
 export default function Home() {
   const [particleColor, setParticleColor] = useState("#FFFFFF");
 
@@ -47,45 +70,27 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="h-[40rem] relative w-full dark:bg-black flex flex-col items-center justify-center overflow-hidden min-h-screen">
-      <div className="absolute inset-0 w-full h-screen">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={100}
-          className="w-full h-full"
-          particleColor={particleColor}
+    <div
+        className="h-[40rem] relative w-full dark:bg-black flex flex-col items-center justify-center overflow-hidden min-h-screen">
+        <div className="absolute inset-0 w-full h-screen">
+            <SparklesCore
+                id="tsparticlesfullpage"
+                background="transparent"
+                minSize={0.6}
+                maxSize={1.4}
+                particleDensity={100}
+                className="w-full h-full"
+                particleColor={particleColor}
+            />
+        </div>
+
+        <TextGenerateEffect
+            words="Sonny Taylor"
+            className="relative z-20 text-3xl font-bold text-center text-white md:text-7xl lg:text-6xl"
         />
-      </div>
+        <Navbar/>
 
-      <TextGenerateEffect
-        words="Sonny Taylor"
-        className="relative z-20 text-3xl font-bold text-center text-white md:text-7xl lg:text-6xl"
-      />
-      <Navbar />
-
-      <footer className="dark:text-white absolute bottom-0 w-full text-center p-4 text-xs">
-        <p>
-          Made with{" "}
-          <a
-            href="https://ui.aceternity.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Acternity
-          </a>{" "}
-          &{" "}
-          <a
-            href="https://ui.shadcn.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            shadcn/ui
-          </a>
-        </p>
-      </footer>
+        <Footer/>
     </div>
   );
 }
